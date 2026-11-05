@@ -1,0 +1,2 @@
+python-dotenv
+garmin-connect-personal-api-python
