@@ -35,6 +35,10 @@ def iter_all_activities(client: GarminPersonalApiClient, page_size: int = 50) ->
             return
         start += len(page)
 
+def download_activity_file(client, activity_id: int) -> bytes:
+    """Return Garmin's original download for an activity, as ZIP bytes."""
+    return client.download_activity(activity_id)
+
 if __name__ == "__main__":
     client = make_client()
     count = 0

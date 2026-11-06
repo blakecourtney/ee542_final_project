@@ -1,2 +1,8 @@
 python-dotenv
-garmin-connect-personal-api-python
+sqlite3
+collections.abc
+os
+garmin_personal_api
+zipfile
+io
+fitdecode
