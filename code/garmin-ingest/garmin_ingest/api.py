@@ -40,10 +40,12 @@ def download_activity_file(client, activity_id: int) -> bytes:
     return client.download_activity(activity_id)
 
 if __name__ == "__main__":
+    import json
+    import sys
+
     client = make_client()
-    count = 0
-    oldest = None
-    for activity in iter_all_activities(client):
-        count += 1
-        oldest = activity["startTimeLocal"]
-    print(f"{count} activities, oldest: {oldest}")
+    activities = list(iter_all_activities(client))
+
+    print(f"{len(activities)} activities, oldest: {activities[-1]['startTimeLocal']}",
+          file=sys.stderr)
+    print(json.dumps(activities, indent=2))

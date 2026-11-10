@@ -3,7 +3,7 @@ import sqlite3
 from pathlib import Path
 
 #libraries for testing
-from .api import make_client, iter_all_activities
+#from .api import make_client, iter_all_activities
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS activities (
@@ -27,6 +27,7 @@ def connect(path: str) -> sqlite3.Connection:
     Path(path).parent.mkdir(parents=True, exist_ok=True)
     conn = sqlite3.connect(path) 
     conn.execute(SCHEMA)
+    conn.row_factory = sqlite3.Row
     return conn
 
 UPSERT_SQL = """
@@ -87,16 +88,7 @@ def save_raw(data_dir: str, activity_id: int, content: bytes) -> Path:
     path.write_bytes(content)
     return path
 
-if __name__ == "__main__":
-    client = make_client()
-    conn = connect("data/garmin.db")
-
-    count = 0
-    for summary in iter_all_activities(client):
-        upsert_activity(conn, summary)
-        count += 1
-    conn.commit()
-
-    total = conn.execute("SELECT COUNT(*) FROM activities").fetchone()[0]
-    print(f"Synced {count} activities; table now has {total} rows")
-    conn.close()
+def has_activity(conn: sqlite3.Connection, activity_id: int) -> bool:
+    """True if this activity is already in the database."""
+    row = conn.execute("SELECT 1 FROM activities WHERE activity_id = ?", (activity_id,)).fetchone()
+    return row is not None
