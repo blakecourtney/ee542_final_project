@@ -3,7 +3,7 @@ from garmin_personal_api import GarminPersonalApiClient, PersonalApiAuthenticato
 import os
 from dotenv import load_dotenv
 from collections.abc import Iterator
-
+from datetime import date
 
 def load_api_key():
     load_dotenv() #pulls api key from local .env file
@@ -39,13 +39,32 @@ def download_activity_file(client, activity_id: int) -> bytes:
     """Return Garmin's original download for an activity, as ZIP bytes."""
     return client.download_activity(activity_id)
 
+def _dated(entries) -> list[dict]:
+    """Keep only entries that have a calendarDate (drops empty no-data nights)."""
+    return [e for e in (entries or []) if e.get("calendarDate")]
+
+
+def fetch_sleep(client: GarminPersonalApiClient, start: date, end: date) -> list[dict]:
+    """Sleep summaries for start..end inclusive. Garmin allows at most ~31 days per call."""
+    data = client.get_daily_sleep_summaries(start, end)
+    return _dated(data)# already a plain list
+
+
+def fetch_hrv(client: GarminPersonalApiClient, start: date, end: date) -> list[dict]:
+    """HRV summaries for start..end inclusive. Nights without HRV are simply absent."""
+    data = client.get_daily_hrv_summaries(start, end) or {}
+    return _dated(data.get("hrvSummaries"))# unwrap {"hrvSummaries": [...]}
+
+
+def fetch_daily(client: GarminPersonalApiClient, start: date, end: date) -> list[dict]:
+    """Daily wellness summaries (resting HR, body battery, stress) for start..end inclusive."""
+    data = client.get_daily_summaries(start, end) or {}
+    return _dated(data.get("data"))# unwrap {"data": [...]}
+
 if __name__ == "__main__":
-    import json
-    import sys
-
-    client = make_client()
-    activities = list(iter_all_activities(client))
-
-    print(f"{len(activities)} activities, oldest: {activities[-1]['startTimeLocal']}",
-          file=sys.stderr)
-    print(json.dumps(activities, indent=2))
+    from datetime import timedelta
+    end = date.today()
+    start = end - timedelta(days=29)
+    for name, fn in [("sleep", fetch_sleep), ("hrv", fetch_hrv), ("daily", fetch_daily)]:
+        entries = fn(client, start, end)
+        print(name, len(entries), entries[0]["calendarDate"] if entries else None)
