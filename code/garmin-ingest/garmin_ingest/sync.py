@@ -55,15 +55,18 @@ def sync_health(client, conn) -> int:
         start = end + timedelta(days=1)          # the day after this chunk's end
     return len(days)
 
-if __name__ == "__main__":
-    import sys
-
-    full = "--full" in sys.argv
+def run_sync(full: bool = False) -> dict:
+    """Sync activities and daily health."""
     client = make_client()
     conn = connect(DB_PATH)
-    written = sync_summaries(client, conn, full=full)
-    total = conn.execute("SELECT COUNT(*) FROM activities").fetchone()[0]
-    print(f"{'Full' if full else 'Incremental'} sync: {written} written, {total} total")
-    days = sync_health(client, conn)
-    print(f"Health sync: {days} days updated")
-    conn.close()
+    try:
+        activities = sync_summaries(client, conn, full=full)
+        days = sync_health(client, conn)
+        return {"activities_written": activities, "health_days_updated": days}
+    finally:
+        conn.close()
+
+
+if __name__ == "__main__":
+    import sys
+    print(run_sync(full="--full" in sys.argv))
