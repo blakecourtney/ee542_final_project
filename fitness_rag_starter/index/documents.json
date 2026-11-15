@@ -1,0 +1,32 @@
+[
+  {
+    "id": "endurance",
+    "title": "Aerobic endurance basics",
+    "source": "Project-authored demonstration notes (not externally verified)",
+    "text": "Aerobic endurance develops through consistent aerobic activity over time. A training plan can combine comfortable conversational-pace sessions, rest days, and occasional more challenging workouts. Increase training gradually and consider current fitness, recovery, and individual limitations."
+  },
+  {
+    "id": "strength",
+    "title": "Strength training fundamentals",
+    "source": "Project-authored demonstration notes (not externally verified)",
+    "text": "Resistance training can involve multiple sets of exercises for major muscle groups. Progressive overload means increasing challenge over time, such as by adjusting repetitions, resistance, or exercise difficulty when technique is consistent. Prioritize appropriate form and recovery; avoid automatically increasing weights after every workout."
+  },
+  {
+    "id": "recovery",
+    "title": "Recovery and training consistency",
+    "source": "Project-authored demonstration notes (not externally verified)",
+    "text": "Recovery is part of training. Sleep, adequate nutrition, rest, and appropriately spaced harder workouts can support adaptation. Persistent unusual fatigue, pain, or declining performance can be reasons to reduce intensity and seek qualified advice when needed."
+  },
+  {
+    "id": "heart-rate",
+    "title": "Heart rate in workouts",
+    "source": "Project-authored demonstration notes (not externally verified)",
+    "text": "Heart rate is one indicator of exercise intensity but varies with heat, stress, hydration, medications, and individual factors. Heart-rate readings alone should not be treated as a diagnosis or used to prescribe a precise training zone without individual context."
+  },
+  {
+    "id": "running",
+    "title": "Running pace and volume",
+    "source": "Project-authored demonstration notes (not externally verified)",
+    "text": "Running pace should be interpreted alongside distance, terrain, weather, effort, and training purpose. A slower run may be intentional and useful. Weekly volume trends are often more informative than comparing two isolated runs."
+  }
+]
