@@ -3,3 +3,6 @@ __pycache__/
 .env
 *.zip
 data/
+sample.json
+sample_*.json
+.DS_Store
