@@ -29,7 +29,10 @@ def health_start_date(conn) -> date:
     if newest:
         return date.fromisoformat(newest) - timedelta(days=REFRESH_DAYS)
     oldest_activity = conn.execute("SELECT MIN(start_time_local) FROM activities").fetchone()[0]
-    return date.fromisoformat(oldest_activity[:10])     # "2024-07-18 21:01:49" -> "2024-07-18"
+    return max(
+        date.fromisoformat(oldest_activity[:10]),
+        date.today() - timedelta(days=59)
+    )
 
 
 def sync_health(client, conn) -> int:

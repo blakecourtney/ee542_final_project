@@ -2,8 +2,11 @@
 import sqlite3
 from datetime import datetime, timedelta, date  
 from .store import connect
+from pathlib import Path
 
-DB_PATH = "data/garmin.db"
+DB_PATH = str(
+    Path(__file__).resolve().parent.parent / "data" / "garmin.db"
+)
 
 FETCH_ROW = "SELECT * FROM daily_health WHERE calendar_date = ?"
 RESTING_HR_AVG = """

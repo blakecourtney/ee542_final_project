@@ -1,0 +1,144 @@
+[
+  {
+    "id": "hhs_activity_guidelines_2018",
+    "title": "Physical Activity Guidelines for Americans, Second Edition",
+    "organization": "U.S. Department of Health and Human Services",
+    "category": "endurance",
+    "file": "raw/endurance/physical_activity_guidelines.pdf",
+    "url": "https://odphp.health.gov/our-work/nutrition-physical-activity/physical-activity-guidelines/current-guidelines",
+    "publication_year": 2018,
+    "license_status": "review_before_redistribution",
+    "stop_at_references": false
+  },
+  {
+    "id": "acsm_resistance_training_2026",
+    "title": "Resistance Training Prescription for Muscle Function, Hypertrophy, and Physical Performance in Healthy Adults",
+    "organization": "American College of Sports Medicine",
+    "category": "strength",
+    "file": "raw/strength/acsm_resistance_training.pdf",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12965823/",
+    "publication_year": 2026,
+    "license_status": "CC BY-NC-ND 4.0",
+    "stop_at_references": true
+  },
+  {
+    "id": "garmin_training_readiness",
+    "title": "Garmin Training Readiness",
+    "organization": "Garmin",
+    "category": "wearables",
+    "file": "raw/wearables/garmin_training_readiness.pdf",
+    "url": "https://www.garmin.com/en-IE/garmin-technology/running-science/physiological-measurements/training-readiness/",
+    "stop_at_references": false,
+    "license_status": "review_before_redistribution"
+  },
+  {
+    "id": "garmin_training_load",
+    "title": "Garmin Training Load",
+    "organization": "Garmin",
+    "category": "wearables",
+    "file": "raw/wearables/garmin_training_load.pdf",
+    "url": "https://www.garmin.com/en-IE/garmin-technology/running-science/physiological-measurements/training-load/",
+    "stop_at_references": false,
+    "license_status": "review_before_redistribution"
+  },
+  {
+    "id": "garmin_hrv_status",
+    "title": "Garmin HRV Status",
+    "organization": "Garmin",
+    "category": "wearables",
+    "file": "raw/wearables/garmin_hrv_status.pdf",
+    "url": "https://www.garmin.com/en-GB/garmin-technology/health-science/hrv-status/",
+    "stop_at_references": false,
+    "license_status": "review_before_redistribution"
+  },
+  {
+    "id": "garmin_load_focus",
+    "title": "Garmin Training Load Focus",
+    "organization": "Garmin",
+    "category": "wearables",
+    "file": "raw/wearables/garmin_load_focus.pdf",
+    "url": "https://www.garmin.com/en-US/garmin-technology/running-science/physiological-measurements/training-load-focus/",
+    "stop_at_references": false,
+    "license_status": "review_before_redistribution"
+  },
+  {
+    "id": "garmin_body_battery",
+    "title": "Garmin Body Battery FAQ",
+    "organization": "Garmin",
+    "category": "wearables",
+    "file": "raw/wearables/garmin_body_battery.pdf",
+    "url": "https://support.garmin.com/en-US/aviation/faq/VOFJAsiXut9K19k1qEn5W5/",
+    "stop_at_references": false,
+    "license_status": "review_before_redistribution"
+  },
+  {
+    "id": "sprint_interval_vo2max",
+    "title": "Sprint Interval Vo2Max",
+    "organization": "Research article via PubMed Central",
+    "category": "endurance",
+    "file": "raw/endurance/sprint_interval_vo2max.pdf",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13385658/",
+    "stop_at_references": true,
+    "license_status": "review_before_redistribution"
+  },
+  {
+    "id": "concurrent_training_review",
+    "title": "Concurrent Training Review",
+    "organization": "Research article via PubMed Central",
+    "category": "programming",
+    "file": "raw/programming/concurrent_training_review.pdf",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11688070/",
+    "stop_at_references": true,
+    "license_status": "review_before_redistribution"
+  },
+  {
+    "id": "concurrent_training_meta",
+    "title": "Concurrent Training Meta",
+    "organization": "Research article via PubMed Central",
+    "category": "programming",
+    "file": "raw/programming/concurrent_training_meta.pdf",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10933151/",
+    "stop_at_references": true,
+    "license_status": "review_before_redistribution"
+  },
+  {
+    "id": "athlete_sleep_recovery",
+    "title": "Athlete Sleep Recovery",
+    "organization": "Research article via PubMed Central",
+    "category": "recovery",
+    "file": "raw/recovery/athlete_sleep_recovery.pdf",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8072992/",
+    "stop_at_references": true,
+    "license_status": "review_before_redistribution"
+  },
+  {
+    "id": "hrv_strength_conditioning",
+    "title": "Hrv Strength Conditioning",
+    "organization": "Research article via PubMed Central",
+    "category": "recovery",
+    "file": "raw/recovery/hrv_strength_conditioning.pdf",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11204851/",
+    "stop_at_references": true,
+    "license_status": "review_before_redistribution"
+  },
+  {
+    "id": "hrv_recovery_review",
+    "title": "Hrv Recovery Review",
+    "organization": "Research article via PubMed Central",
+    "category": "recovery",
+    "file": "raw/recovery/hrv_recovery_review.pdf",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12787763/",
+    "stop_at_references": true,
+    "license_status": "review_before_redistribution"
+  },
+  {
+    "id": "cdc_getting_started",
+    "title": "Getting Started With Physical Activity",
+    "organization": "Centers for Disease Control and Prevention",
+    "category": "safety",
+    "file": "raw/safety/cdc_getting_started.html",
+    "url": "https://www.cdc.gov/healthy-weight-growth/physical-activity/getting-started.html",
+    "stop_at_references": false,
+    "license_status": "review_before_redistribution"
+  }
+]
